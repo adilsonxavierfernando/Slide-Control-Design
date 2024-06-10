@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400|Raleway:300');
+body {
+	background: #180324;
+}
+.controles{
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 400px;
+  height: 80px;
+  margin-top: 0;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: .5rem 1rem 1rem 0 rgba(0,0,0,0.6);
+  background-color: #000000;;
+  color: whitesmoke;
+}
+.controles div{
+  margin: 5px;
+  display: flex;
+  gap: 2px;
+  justify-content: space-between;
+}
+button{
+  border:none;
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding: 10px;
+  width: 60px;
+  height: 50px;
+  background: radial-gradient(circle, yellow, orange, purple) 
+}
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: .5rem 1rem 1rem 0 rgba(0,0,0,0.6);
+	overflow: hidden;
+  color: #c49a12;
+	font-family: 'Rubik', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+ background: #190233;
+}
+
+.thermostat {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 100px;
+  left: 100px;
+  background: #F2F2F9;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.8);
+}
+
+.thermostat .control {
+  position: absolute;
+  z-index: 5;
+  width: 130px;
+  height: 130px;
+  top: 25%;
+  left: 35px;
+  background: #e6e6e6;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+}
+.thermostat .control .temp_outside {
+  position: absolute;
+  top: 25px;
+  left: 6px;
+  right: 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1rem;
+}
+.thermostat .control .temp_room {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  color: #873183;
+  letter-spacing: -8px;
+  padding-right: 12px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .5s ease-in-out;
+}
+.thermostat .control .temp_room span {
+  position: absolute;
+  top: 0;
+  right: 37px;
+  font-size: 2rem;
+  line-height: 34px;
+  padding: 3px 0 0 7px;
+	color: #8e2275;
+}
+.room {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1rem;
+}
+.thermostat .ring {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 10px;
+  left: 10px;
+  background: radial-gradient(circle, yellow, orange, purple) center center no-repeat;
+  border-radius: 50%;
+  box-shadow: inset 2px 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+.thermostat .ring .bottom_overlay {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  top: 50%;
+  left: 50%;
+  background: #F2F2F2;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+  border-radius: 0 0 95px 0;
+}
+
+#slider {
+	position: absolute;
+	width: 17px;
+	height: 150px;
+	top: 36%;
+	left: 32%;
+	z-index: 1000;
+}
+
+#slider .rs-border  {
+    border-color: transparent;
+}
+.rs-control .rs-range-color, .rs-control .rs-path-color, .rs-control .rs-bg-color {
+    background-color: rgba(0, 0, 0, 0);
+}
+.rs-control .rs-handle {
+    background-color: fade-out(#522c6d, .2);
+}
+.rs-tooltip.edit, .rs-tooltip .rs-input, .rs-tooltip-text {
+	font-family: rubik, helvetica, sans-serif;
+	font-size: 3.3rem;
+	background: transparent;
+	color: #8e2275;
+	font-weight: 400;
+	top: 65%;
+	height: 3.9rem;
+	padding: 0 !important;
+	width: 4.5rem;
+}
+#slider:hover .rs-tooltip, .rs-tooltip:focus, .rs-tooltip-text:focus {
+	border: none;
+	transform: scale(1.1);
+	transition: .1s;
+}
+#slider .rs-transition  {
+  transition-timing-function: cubic-bezier(1.000, -0.530, 0.405, 1.425);
+}
+.instructions {
+	position: absolute;
+	bottom: .5rem;
+	color: fade-out(white, .75);
+	font-size: 1rem;
+	font-family: raleway, sans-serif;
+	width: 85%;
+	left: 10%;
+	font-weight: 300;
+	letter-spacing: .05rem;
+	line-height: 1.3;
+	text-align: center;
+}
+.fas {
+	animation: pulse 1s infinite;
+}
+@keyframes pulse {
+	50% {
+		transform: scale(.9);
+	}
+}
+
+
+/* range style*/
+
+#sliderContainer {
+  margin: 50px;
+  text-align: center;
+  background: radial-gradient(circle, yellow, orange, purple);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 20px auto;
+  background: transparent;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+  background: radial-gradient(circle, yellow, orange, purple);
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: radial-gradient(circle, purple, orange, yellow);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+  background: radial-gradient(circle, purple, orange, yellow);
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: radial-gradient(circle, yellow, orange, purple);
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: radial-gradient(circle, yellow, orange, purple);
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: radial-gradient(circle, purple, orange, yellow);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: radial-gradient(circle, orange, purple, yellow);
+}
+
+/*style para input numeric*/
+input[type=number] {
+  width: 60px;
+  padding: 5px;
+  width: 60%;
+  height: 38px;
+  border: none;
+  font-size: 1.8em;
+  text-align: center;
+  background: #190233;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  color: whitesmoke;
+}
+input[type=number]:focus {
+
+  border-color: #dd3400;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  outline: none;
+
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+a{
+  text-decoration: none;
+}
+
